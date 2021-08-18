@@ -41,6 +41,13 @@ else
 #   PATH="$PATH:$(pwd)/node_modules/.bin"
 fi
 
+if [ -n "${10}" ]; then 
+  sudo apt update
+  sudo apt install python"${10}"
+  echo "install python version ${10}"
+fi
+
+
 which amplify
 echo "amplify version $(amplify --version)"
 

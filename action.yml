@@ -33,6 +33,10 @@ inputs:
     description: 'additional arguments to pass to ampify_command defined command'
     required: false
     default: ''
+  python-version:
+    description: 'version of python in using docker'
+    required: false
+    default: '3.5.3'
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/ambientlight/amplify-cli-action/amplify-cli-action:0.3.0'
@@ -46,6 +50,7 @@ runs:
     - ${{ inputs.delete_lock }}
     - ${{ inputs.amplify_cli_version }}
     - ${{ inputs.amplify_arguments }}
+    - ${{ inputs.python-version }}
 branding:
   icon: 'git-commit'
   color: 'orange'
